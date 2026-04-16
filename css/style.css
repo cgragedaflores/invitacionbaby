@@ -456,7 +456,11 @@ body {
     color: var(--color-blue);
 }
 
-
+.team-btn {
+    background: linear-gradient(135deg, var(--color-pink) 0%, #ff8fc7 100%);
+    color: white;
+    border: none;
+    padding: var(--spacing-sm) var(--spacing-md);
     margin-top: var(--spacing-md);
     border-radius: var(--border-radius-md);
     cursor: pointer;
@@ -470,7 +474,8 @@ body {
     background: linear-gradient(135deg, var(--color-pink) 0%, #ff8fc7 100%);
 }
 
-.team-btn-girl:hover {
+.team-btn-girl:hover,
+.team-btn-boy:hover {
     transform: scale(1.05);
     box-shadow: var(--shadow-md) rgba(255, 105, 180, 0.3);
 }
@@ -480,7 +485,6 @@ body {
 }
 
 .team-btn-boy:hover {
-    transform: scale(1.05);
     box-shadow: var(--shadow-md) rgba(135, 206, 235, 0.3);
 }
 
