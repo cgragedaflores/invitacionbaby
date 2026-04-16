@@ -7,30 +7,42 @@ const audio = document.getElementById('backgroundMusic');
 const musicBtn = document.getElementById('musicBtn');
 
 // Inicializar cuando carga la página
-document.addEventListener('DOMContentLoaded', function () {
-    // Event listeners para música
+const teamCards = document.querySelectorAll('.team-card');
+const confirmBtn = document.querySelector('.confirm-btn');
+const modal = document.getElementById('confirmModal');
+const closeModalBtn = document.querySelector('.modal-close');
+const submitBtn = document.querySelector('.modal-submit');
+const nameInput = document.getElementById('nameInput');
+const teamSelect = document.getElementById('teamSelect');
+
+function initPage() {
     musicBtn.addEventListener('click', toggleMusic);
 
-    // Cerrar modal al hacer clic fuera de él
-    window.addEventListener('click', function (event) {
-        const modal = document.getElementById('confirmModal');
+    teamCards.forEach(card => {
+        const team = card.dataset.team || card.id.replace('team', '').toLowerCase();
+        card.addEventListener('click', () => selectTeam(team));
+    });
+
+    if (confirmBtn) {
+        confirmBtn.addEventListener('click', openModal);
+    }
+
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', closeModal);
+    }
+
+    if (submitBtn) {
+        submitBtn.addEventListener('click', submitConfirmation);
+    }
+
+    window.addEventListener('click', event => {
         if (event.target === modal) {
             closeModal();
         }
     });
+}
 
-    // Feedback visual al hacer scroll
-    window.addEventListener('scroll', function () {
-        const confirmBtn = document.querySelector('.confirm-btn');
-        if (confirmBtn) {
-            const rect = confirmBtn.getBoundingClientRect();
-            if (rect.bottom > window.innerHeight) {
-                confirmBtn.style.position = 'sticky';
-                confirmBtn.style.bottom = '20px';
-            }
-        }
-    });
-});
+document.addEventListener('DOMContentLoaded', initPage);
 
 /**
  * Seleccionar equipo
@@ -133,13 +145,13 @@ function submitConfirmation() {
         `¡Hola! Me confirmo para el Baby Shower 🎉\n\n` +
         `👤 Nombre: ${name}\n` +
         `👥 Equipo: ${teamName}\n` +
-        `📅 Fecha: 18 de Enero de 2026 a las 16:00 hs\n` +
-        `📍 Lugar: Quinta San Isidro\n\n` +
+        `📅 Fecha: 3 de Mayo de 2026 a las 15:00 hs\n` +
+        `📍 Lugar: Salon Oropeza\n\n` +
         `¡Nos vemos allá! 💕`
     );
 
-    // Número de WhatsApp (reemplazar con el número real)
-    const numeroWhatsapp = '+591 74955734'; // Reemplazar con número real
+    // Número de WhatsApp (sin espacios ni símbolos)
+    const numeroWhatsapp = '59174955734'; // Reemplazar con número real
 
     // Abrir WhatsApp
     const urlWhatsapp = `https://wa.me/${numeroWhatsapp}?text=${mensaje}`;

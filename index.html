@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <title>Neitan Jasiel o Xiomara Jhamilet - Baby Shower</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Fredoka:wght@400;600&family=Caveat:wght@700&display=swap"
         rel="stylesheet">
@@ -28,17 +28,17 @@
 
     <!-- Bebés decorativos -->
     <div class="teddy-container">
-        <div class="baby-cloud teddy teddy-left" aria-label="Bebé niño sobre nube">
+        <div class="baby-cloud teddy teddy-left" aria-label="Bebé niño sobre nube" data-team="boy">
             <div class="cloud">
                 <div class="tail"></div>
             </div>
-            <img src="bebe1.png" alt="Bebé 1" />
+            <img src="assets/images/bebe1.png" alt="Bebé 1" />
         </div>
-        <div class="baby-cloud teddy teddy-right" aria-label="Bebé niña sobre nube">
+        <div class="baby-cloud teddy teddy-right" aria-label="Bebé niña sobre nube" data-team="girl">
             <div class="cloud">
                 <div class="tail"></div>
             </div>
-            <img src="bebe2.png" alt="Bebé 2" />
+            <img src="assets/images/bebe2.png" alt="Bebé 2" />
         </div>
     </div>
 
@@ -94,21 +94,21 @@
 
             <!-- Teams interactivos -->
             <div class="teams-container">
-                <div class="team-card team-girl" id="teamGirl" onclick="selectTeam('girl')">
+                <div class="team-card team-girl" id="teamGirl" data-team="girl">
                     <h2 class="team-title">👧 Team Xiomara Jhamilet</h2>
                     <p class="team-note">Recuerda traer tu outfit Rosa si eres team niña 👗</p>
-                    <button class="team-btn team-btn-girl">Seleccionar Team Niña</button>
+                    <button class="team-btn team-btn-girl" type="button">Seleccionar Team Niña</button>
                 </div>
 
-                <div class="team-card team-boy" id="teamBoy" onclick="selectTeam('boy')">
+                <div class="team-card team-boy" id="teamBoy" data-team="boy">
                     <h2 class="team-title">👦 Team Neitan Jasiel</h2>
                     <p class="team-note">Recuerda traer tu outfit Azul si eres team niño 👕</p>
-                    <button class="team-btn team-btn-boy">Seleccionar Team Niño</button>
+                    <button class="team-btn team-btn-boy" type="button">Seleccionar Team Niño</button>
                 </div>
             </div>
 
             <!-- Botón de confirmación -->
-            <button class="confirm-btn" onclick="openModal()">
+            <button class="confirm-btn" type="button">
                 ✨ Confirmar Asistencia ✨
             </button>
 
@@ -130,7 +130,7 @@
     <!-- Modal de confirmación -->
     <div class="modal" id="confirmModal">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <button class="modal-close" type="button">&times;</button>
             <h2>¡Vamos a confirmar tu asistencia!</h2>
             <form id="confirmForm">
                 <div class="form-group">
@@ -145,7 +145,7 @@
                         <option value="boy">Team Neitan Jasiel 👦</option>
                     </select>
                 </div>
-                <button type="button" class="modal-submit" onclick="submitConfirmation()">
+                <button type="button" class="modal-submit">
                     Confirmar por WhatsApp
                     <i class="fab fa-whatsapp"></i>
                 </button>
@@ -155,10 +155,10 @@
 
     <!-- Audio de fondo -->
     <audio id="backgroundMusic" loop>
-        <source src="audio.mp3" type="audio/mpeg">
+        <source src="assets/audio/audio.mp3" type="audio/mpeg">
     </audio>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

@@ -456,40 +456,7 @@ body {
     color: var(--color-blue);
 }
 
-.team-subtitle {
-    font-size: 0.9em;
-    color: var(--color-text-light);
-    margin-bottom: var(--spacing-md);
-    font-style: italic;
-}
 
-.team-options {
-    list-style: none;
-    text-align: left;
-    padding: var(--spacing-md);
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: var(--border-radius-sm);
-    margin: var(--spacing-md) 0;
-}
-
-.team-options li {
-    padding: var(--spacing-xs) 0;
-    color: var(--color-text-medium);
-}
-
-.team-note {
-    font-size: 0.85em;
-    color: var(--color-text-light);
-    margin-top: var(--spacing-md);
-    font-style: italic;
-    line-height: 1.5;
-}
-
-.team-btn {
-    background: linear-gradient(135deg, var(--color-pink) 0%, #ff8fc7 100%);
-    color: white;
-    border: none;
-    padding: var(--spacing-sm) var(--spacing-md);
     margin-top: var(--spacing-md);
     border-radius: var(--border-radius-md);
     cursor: pointer;
@@ -716,18 +683,6 @@ body {
     box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
 }
 
-.whatsapp-icon-small {
-    width: 20px;
-    height: 20px;
-    margin-left: var(--spacing-xs);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Font Awesome Icons */
-.fa-location-dot {
-    font-size: 2.5em;
     transition: all var(--transition-normal);
     will-change: transform;
 }
