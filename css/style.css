@@ -737,6 +737,41 @@ body {
 }
 
 /* Tablets (768px) */
+/* Tablets and modern phones (768px - 480px) */
+@media (max-width: 767px) and (min-width: 481px) {
+    .team-btn {
+        background: linear-gradient(135deg, var(--color-pink) 0%, #ff8fc7 100%);
+        color: white;
+        border: none;
+        padding: var(--spacing-sm) var(--spacing-md);
+        border-radius: var(--border-radius-md);
+        cursor: pointer;
+        font-weight: 600;
+        transition: all var(--transition-normal);
+        font-size: 0.9em;
+        will-change: transform, box-shadow;
+    }
+
+    .team-btn-girl {
+        background: linear-gradient(135deg, var(--color-pink) 0%, #ff8fc7 100%);
+    }
+
+    .team-btn-girl:hover,
+    .team-btn-boy:hover {
+        transform: scale(1.05);
+        box-shadow: var(--shadow-md) rgba(255, 105, 180, 0.3);
+    }
+
+    .team-btn-boy {
+        background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-sky-blue) 100%);
+    }
+
+    .team-btn-boy:hover {
+        box-shadow: var(--shadow-md) rgba(135, 206, 235, 0.3);
+    }
+}
+
+/* Tablets (768px) */
 @media (max-width: 768px) {
     :root {
         --spacing-lg: 25px;
