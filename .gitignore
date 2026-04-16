@@ -1,0 +1,25 @@
+# Archivos temporales
+*.tmp
+*.temp
+*.log
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor específico
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node modules (si se agregan en el futuro)
+node_modules/
+
+# Archivos de build
+dist/
+build/
+
+# Archivos de Netlify locales
+.netlify/

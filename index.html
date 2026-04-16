@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Neitan Jasiel o Xiomara Jhamilet - Baby Shower</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Fredoka:wght@400;600&family=Caveat:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVJkEZSMUkrQ6usKLD8v/G/OwNe59ElfCUkaI+eJ4+z2XyKqXtLSrSZ+dcsFgDrmZSmwMMJPSZA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- Fondo dividido -->
+    <div class="background">
+        <div class="background-left"></div>
+        <div class="background-right"></div>
+
+        <!-- Decoraciones de fondo -->
+        <div class="watercolor watercolor-pink"></div>
+        <div class="watercolor watercolor-blue"></div>
+    </div>
+
+    <!-- Bebés decorativos -->
+    <div class="teddy-container">
+        <div class="baby-cloud teddy teddy-left" aria-label="Bebé niño sobre nube">
+            <div class="cloud">
+                <div class="tail"></div>
+            </div>
+            <img src="bebe1.png" alt="Bebé 1" />
+        </div>
+        <div class="baby-cloud teddy teddy-right" aria-label="Bebé niña sobre nube">
+            <div class="cloud">
+                <div class="tail"></div>
+            </div>
+            <img src="bebe2.png" alt="Bebé 2" />
+        </div>
+    </div>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Decoraciones pequeñas -->
+        <div class="decorations">
+            <span class="heart">💕</span>
+            <span class="footprint">👣</span>
+            <span class="heart">💕</span>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="content">
+            <!-- Título -->
+            <h1 class="main-title">Revelación y Baby Shower</h1>
+
+            <!-- Subtítulo -->
+            <p class="subtitle">¡Te invitamos a celebrar nuestra revelación y baby shower con Neitan Jasiel o Xiomara
+                Jhamilet!</p>
+
+            <!-- Información de los padres -->
+            <div class="parents-info">
+                <p class="parents-text">Juan Carlos Subelza & Jubidza Tania Llanqui</p>
+            </div>
+
+            <!-- Detalles del evento -->
+            <div class="event-details">
+                <div class="detail-item">
+                    <span class="detail-label">📅</span>
+                    <p>Domingo, 3 de Mayo de 2026</p>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">🕐</span>
+                    <p>15:00 hs</p>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label"><i class="fas fa-location-dot"
+                            style="color: var(--color-pink);"></i></span>
+                    <p><a href="https://maps.google.com/?q=Salon+Oropeza" target="_blank" class="location-link"><svg
+                                class="location-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" />
+                            </svg> Salon Oropeza</a></p>
+                </div>
+            </div>
+
+            <!-- Pregunta central -->
+            <div class="question-section">
+                <p class="question">¿Qué crees que soy?</p>
+                <div class="heart-divider">💕</div>
+            </div>
+
+            <!-- Teams interactivos -->
+            <div class="teams-container">
+                <div class="team-card team-girl" id="teamGirl" onclick="selectTeam('girl')">
+                    <h2 class="team-title">👧 Team Xiomara Jhamilet</h2>
+                    <p class="team-note">Recuerda traer tu outfit Rosa si eres team niña 👗</p>
+                    <button class="team-btn team-btn-girl">Seleccionar Team Niña</button>
+                </div>
+
+                <div class="team-card team-boy" id="teamBoy" onclick="selectTeam('boy')">
+                    <h2 class="team-title">👦 Team Neitan Jasiel</h2>
+                    <p class="team-note">Recuerda traer tu outfit Azul si eres team niño 👕</p>
+                    <button class="team-btn team-btn-boy">Seleccionar Team Niño</button>
+                </div>
+            </div>
+
+            <!-- Botón de confirmación -->
+            <button class="confirm-btn" onclick="openModal()">
+                ✨ Confirmar Asistencia ✨
+            </button>
+
+            <!-- Control de música -->
+            <div class="music-control">
+                <button id="musicBtn" class="music-btn" title="Reproducir música">
+                    🎵
+                </button>
+                <span class="music-label">DBZ-Esperamos tu llegada</span>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>CHMTECH 💕</p>
+        </footer>
+    </div>
+
+    <!-- Modal de confirmación -->
+    <div class="modal" id="confirmModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <h2>¡Vamos a confirmar tu asistencia!</h2>
+            <form id="confirmForm">
+                <div class="form-group">
+                    <label for="nameInput">Tu nombre:</label>
+                    <input type="text" id="nameInput" name="name" placeholder="Escribe tu nombre aquí" required>
+                </div>
+                <div class="form-group">
+                    <label for="teamSelect">Tu equipo:</label>
+                    <select id="teamSelect" name="team" required>
+                        <option value="">Selecciona tu equipo</option>
+                        <option value="girl">Team Xiomara Jhamilet 👧</option>
+                        <option value="boy">Team Neitan Jasiel 👦</option>
+                    </select>
+                </div>
+                <button type="button" class="modal-submit" onclick="submitConfirmation()">
+                    Confirmar por WhatsApp
+                    <i class="fab fa-whatsapp"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Audio de fondo -->
+    <audio id="backgroundMusic" loop>
+        <source src="audio.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
