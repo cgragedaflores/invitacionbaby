@@ -5,6 +5,7 @@ let isPlayingMusic = false;
 // Elemento de audio
 const audio = document.getElementById('backgroundMusic');
 const musicBtn = document.getElementById('musicBtn');
+const musicLabel = document.querySelector('.music-label');
 
 // Inicializar cuando carga la página
 const teamCards = document.querySelectorAll('.team-card');
@@ -16,6 +17,8 @@ const nameInput = document.getElementById('nameInput');
 const teamSelect = document.getElementById('teamSelect');
 
 function initPage() {
+    // Establecer label inicial
+    musicLabel.textContent = 'Iniciar música';
     musicBtn.addEventListener('click', toggleMusic);
 
     teamCards.forEach(card => {
@@ -183,6 +186,7 @@ function playMusic() {
         isPlayingMusic = true;
         musicBtn.classList.add('playing');
         musicBtn.title = 'Pausar música';
+        musicLabel.textContent = 'Pausar música';
         showNotification('🎵 Música activada');
     }).catch(error => {
         console.log('Error al reproducir música:', error);
@@ -195,6 +199,7 @@ function pauseMusic() {
     isPlayingMusic = false;
     musicBtn.classList.remove('playing');
     musicBtn.title = 'Reproducir música';
+    musicLabel.textContent = 'Iniciar música';
     showNotification('🔇 Música pausada');
 }
 
@@ -204,11 +209,13 @@ function pauseMusic() {
 audio.addEventListener('play', () => {
     isPlayingMusic = true;
     musicBtn.classList.add('playing');
+    musicLabel.textContent = 'Pausar música';
 });
 
 audio.addEventListener('pause', () => {
     isPlayingMusic = false;
     musicBtn.classList.remove('playing');
+    musicLabel.textContent = 'Iniciar música';
 });
 
 audio.addEventListener('ended', () => {
